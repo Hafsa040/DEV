@@ -4,7 +4,7 @@
   align-items: center;
   height: 56px;
   padding: 0 16px;
-  background-color: #1B8C3E;
+  background-color: #1b8c3e;
   color: white;
 }
 
@@ -42,4 +42,26 @@
   justify-content: center;
   font-weight: bold;
   font-size: 14px;
+}
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.userName {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.logoutBtn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+.logoutBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
