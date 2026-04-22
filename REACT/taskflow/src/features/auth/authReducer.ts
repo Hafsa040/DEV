@@ -42,7 +42,7 @@ export function authReducer(
         case 'LOGIN_SUCCESS': 
             return { 
                 user: action.payload,
-                token: null, // corrigé ici
+                token: null, 
                 loading: false, 
                 error: null 
             }; 

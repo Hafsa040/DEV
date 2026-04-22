@@ -10,7 +10,7 @@ export default function Login() {
   const navigate = useNavigate(); 
   const location = useLocation(); 
   
-  // Remplacement de useAuth par Redux
+  
   const dispatch = useDispatch();
   const { user, loading, error } = useSelector((state: RootState) => state.auth);
 
@@ -19,7 +19,7 @@ export default function Login() {
   
   const from = (location.state as any)?.from || '/dashboard'; 
   
-  // Redirection automatique si déjà connecté
+  
   useEffect(() => { 
     if (user) navigate(from); 
   }, [user, navigate, from]); 
@@ -27,7 +27,7 @@ export default function Login() {
   async function handleSubmit(e: React.FormEvent) { 
     e.preventDefault(); 
     
-    // Utilisation de l'action creator loginStart
+    
     dispatch(loginStart()); 
 
     try { 
@@ -40,7 +40,7 @@ export default function Login() {
       
       const { password: _, ...userData } = users[0];
 
-      // Créer un faux JWT
+      
       const fakeToken = btoa(
         JSON.stringify({
           userId: userData.id,
@@ -50,7 +50,7 @@ export default function Login() {
         })
       );
 
-      // Utilisation de l'action creator loginSuccess
+      
       dispatch(loginSuccess({ user: userData, token: fakeToken }));
 
     } catch { 

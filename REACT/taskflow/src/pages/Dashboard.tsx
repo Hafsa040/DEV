@@ -69,7 +69,7 @@ export default function Dashboard() {
                 submitLabel="Créer"
                 onSubmit={async (name, color) => {
                   await addProject(name, color);
-                  setShowForm(false); // Ferme le formulaire après ajout
+                  setShowForm(false); 
                 }}
                 onCancel={() => setShowForm(false)}
               />
