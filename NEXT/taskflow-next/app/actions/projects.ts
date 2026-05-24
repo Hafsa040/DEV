@@ -1,19 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-
-
-export async function addProject(formData: FormData) {
-  const name = formData.get("name") as string;
-  const color = formData.get("color") as string;
-  await fetch("http://localhost:3000/api/projects", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, color }),
-  });
-  revalidatePath("/dashboard");
-}
-
+import { prisma } from '@/lib/prisma';   export async function addProject(formData: FormData) {   const name = formData.get('name') as string;   const color = formData.get('color') as string;   await prisma.project.create({ data: { name, color } });   revalidatePath('/dashboard'); 
 
 export async function renameProject(formData: FormData) {
 
